@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Barfas IOT platform</title>
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.default.min.css" />
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./table-buster/tableBuster.css" type="text/css" media="screen" />
+
+    <!-- <script type="text/javascript" src="./table-buster/redips-table-min.js"></script> -->
+    <!-- <script type="text/javascript" src="./table-buster/ table_buster.min.js"></script> -->
+
+    <script type="text/javascript" src="./table-buster/script.js"></script>
+
+    <link rel="stylesheet" href="./table-buster/css/alertify.min.css" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="./table-buster/css/themes/default.min.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/784f1a98af.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Barfas</b></a>
+            <!--logo end-->
+
+            <button id="notif1" data-toggle="tooltip" data-placement="top" ata-original-title="Tooltip on top"
+                class="btn btn-dark" type="button" value="merge" onclick="tb.merge(...mouseMoveTd);clearStyle('over');">
+                <div class="fa fa-columns tooltips" data-placement="bottom" data-original-title="Birleştir"></div>
+
+            </button>
+            <button id="notif2" data-toggle="tooltip" class="btn btn-dark" type="button"
+                onclick="tb.merge(...mouseMoveTd);changeStyle();">
+                <div class="fa fa-clone tooltips" data-placement="bottom" data-original-title="Grupla"></div>
+            </button>
+
+            <button id="notif3" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="split()">
+                <div class="fa fa-arrows-alt-h tooltips" data-placement="bottom" data-original-title=" Böl"></div>
+            </button>
+
+            <button id="notif5" data-toggle="tooltip" class="btn btn-dark" type="button" onclick=" refreshStyle()">
+                <div class="fa fa-redo tooltips" data-placement="bottom" data-original-title="Sıfırla"></div>
+            </button>
+
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-warning">4</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">You have 4 new notifications</p>
+                            </li>
+                            <li>
+                                <a>
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Server
+                                    Overloaded.
+                                    <span class="small italic">4 mins.</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                    <!--  notification end -->
+
+                </ul>
+                <!-- User Account -->
+                <div class="userAccount">
+                    <div class="profile" onclick="userToggle();">
+                        <img src="img/male_user.png" alt="" width="50">
+                    </div>
+                    <div class="accountMenu">
+                        <h3>User</h3>
+                        <ul>
+                            <li><img src="img/user-logo.png" alt=""><a href="#">Notifications</a></li>
+                            <li><img src="img/user-logo.png" alt=""><a href="#">profile</a></li>
+                            <li><img src="img/settings.png" alt=""><a href="#">Settings</a></li>
+                            <li><img src="img/devices.png" alt=""><a href="#">My Devices</a></li>
+                            <li><img src="img/coins.png" alt=""><a href="#">Financial account</a></li>
+                            <li><img src="img/store.png" alt=""><a href="#">Store</a></li>
+                            <li><img src="img/support.png" alt=""><a href="#">Support</a></li>
+                            <li><img src="img/develop.png" alt=""><a href="#">Developer</a></li>
+                            <li><img src="img/logout.png" alt=""><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li class="sub-menu">
+                        <a class="active">
+                            <i onclick="addMenu()" class="fa fa-plus"
+                                href="./platform-dashboard/platform-dashboard/index.html"></i>
+                            <span type="button" id="addMenu" onclick="editSideBarMenuItmes()">Menu Ekle</span>
+                        </a>
+
+                    </li>
+                    <div id="mn1">
+                        <div></div>
+                    </div>
+
+                    </li>
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!-- Modal -->
+                <div class="modal fade" id="chooseMenuItemModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Choose Menu Item</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img id="drag-1" src="./img/circuit.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="circuit.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-2" src="./img/monitoring128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input checked class="form-check-input" type="checkbox"
+                                                value="monitoring128px.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/gsmgateway128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="gsmgateway128px.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/pcb&dizgi128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="pcb&dizgi128px.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/route.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="route.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" id="saveCanvas" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="modalDiv"></div>
+                <table border="1" width="100%" cellpadding="10"></table>
+
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../platform-dashboard/lib/src/jquery.nu-selectable.js"></script>
+
+    <script src="./barfas.js"></script>
+    <script src="./table-buster/alertify.min.js"></script>
+    <!-- <script src="lib/jquery/jquery.min.js"></script> -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="lib/jquery.scrollTo.min.js"></script>
+    <script src="lib/jquery.nicescroll.js"></script>
+    <!--common script for all pages-->
+    <script src="lib/common-scripts.js"></script>
+    <!--script for this page-->
+    <script type="application/javascript">
+    </script>
+
+
+    <!-- <script type="text/javascript">
+        function userToggle() {
+            const toggleAccount = document.querySelector('.accountMenu');
+            toggleAccount.classList.toggle('active')
+        }
+
+        $(function () {
+
+            var selection = $('#mainTable').nuSelectable({
+                items: '.item',
+                selectionClass: 'nu-selection-box',
+                selectedClass: 'nu-selected',
+
+            });
+
+        });
+
+        $('#noitf2').click(function () {
+            $(".item").css("background", "");
+            $(this).css('background', 'red');
+        });
+    </script> -->
+
+</body>
+
+</html>
+<!-- nav menu setting -->
+<script>
+    let sMenuCount = 5;
+    let array = [
+        { subMenuId: '0subMenu', subMenuCount: sMenuCount },
+        { subMenuId: '1subMenu', subMenuCount: 2 },
+        { subMenuId: '2subMenu', subMenuCount: 1 }]
+
+    let valu = localStorage.getItem('key')
+
+    createNavMenu(valu);
+    starMenu(array);
+
+    //  localStorage.removeItem('key')
+
+
+    $(document).ready(function () {
+
+        menuNavClickEvent(valu);
+        subMenuClickEvent();
+
+
+    })
+
+</script>
+
+<script src="./table-buster/table_buster.min.js"></script>
+<script src="./table-buster/table_buster.min.js.map"></script>
+<script>
+
+    let tb = new TableBuster(document.querySelector('table'));
+
+    function addSubmenu() {
+        alertify.notify("Successfully added!")
+    }
+
+    function split() {
+        tb.split(lastClickTd,
+            function (td, offsetRow, offsetCell) {
+                console.log(offsetRow, offsetCell);
+                return td;
+            }
+        );
+
+    }
+
+    function fillSquare(rowCapacity) {
+        Array.apply(null, {
+            length: rowCapacity
+        }).forEach(() => {
+            tb.addCell().addRow();
+        });
+
+    }
+
+    function clearStyle(className) {
+        document.querySelectorAll('td').forEach((td) => {
+            td.classList.remove(className);
+            //td.innerHTML='<i class="fa fa-plus"></i>'
+        });
+    }
+    function changeStyle() {
+        lastClickTd.className = "ovrr"
+    }
+
+    function refreshStyle() {
+        lastClickTd.className = "over"
+    }
+    function clearLastChild() {
+        if (lastClickTd)
+            lastClickTd.style.backgroundColor = "";
+        lastClickTd = null;
+    }
+
+    let lastClickTd = null,
+        flagMouseDown = false,
+        mouseMoveTd = [null, null];
+
+    function eventForTest() {
+
+        let chooseId = ["testID1", "testID2", "testID3", "testID4", "testID5", "testID6", "testID7", "testID8", "testID9",
+            "testID10", "testID11", "testID12", "testID13", "testID14", "testID15", "testID16"]
+        let chId = -1;
+        tb.dom.addEventListener('dblclick', (event) => {
+            if (event.target.nodeName === 'TD') {
+                chId = chId + 1;
+                $('#chooseMenuItemModalCenter').modal('show')
+                var selectedTableData = event.target
+                console.log()
+                selectedTableData.setAttribute("id", chooseId[chId]);
+
+                //let tdHeight = document.getElementById('test').offsetHeight;
+                //let tdWidght = document.getElementById('test').offsetWidth;
+
+                var p = $(selectedTableData).first();;
+                var position = p.position();
+                $('#saveCanvas').click(function () {
+                    let checkedValue = $('.form-check-input:checked').val();
+                    //document.getElementById(chooseId[chId]).innerHTML = '<td class="over"><img id="drag1" src="C:\\Users\\Gökhan\\Desktop\\Barfas\\ElektroentIcon\\Icons\\circuit.png" width="130" height="55"></td>'
+                    document.getElementById(chooseId[chId]).innerHTML = addMenuItemToTable(checkedValue);
+                    //$(chooseId[chId]).append('<img id="drag1" src="C:\\Users\\Gökhan\\Desktop\\Barfas\\ElektroentIcon\\Icons\\circuit.png" width="130" height="55">');
+                    // var positi = $("img").first();
+                    // var itemPosition = positi.position();
+                    // itemPosition.left = position.left;
+                    // itemPosition.top = position.top - 50;
+                    // console.log(itemPosition.left)
+                    // console.log("TD Height:" + tdHeight, "" + "TD Widht:" + tdWidght)
+                });
+
+            }
+        })
+
+        tb.dom.addEventListener('click', (event) => {
+            if (event.target.nodeName === 'TD') {
+                mouseMoveTd = [null, null];
+                //event.target.style.backgroundColor = "yellow";
+                // if (lastClickTd)
+                //     lastClickTd.style.backgroundColor = "";
+                clearLastChild();
+                lastClickTd = event.target;
+            }
+        }, false);
+
+        tb.dom.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (event.target.nodeName === 'TD') {
+                flagMouseDown = true;
+                clearStyle('over');
+                mouseMoveTd[0] = event.target;
+                event.target.classList.add('over');
+            }
+        }, false);
+        tb.dom.addEventListener('mouseover', (event) => {
+            if (event.target.nodeName === 'TD') {
+                if (flagMouseDown === true) {
+                    mouseMoveTd[1] = event.target;
+                    let tdRange = tb.findAreaTd(...mouseMoveTd);
+                    clearStyle('over');
+                    tdRange.forEach((td) => {
+                        td.classList.add('over');
+
+                    });
+                    // clear last child
+                    clearLastChild();
+                }
+            }
+        }, false);
+        tb.dom.addEventListener('mouseup', (event) => {
+            flagMouseDown = false;
+        }, false);
+    }
+
+    fillSquare(8);
+    tb.refresh();
+    eventForTest();
+
+    lastClickTd = document.querySelector('td');
+
+    const tds = document.querySelectorAll('td');
+
+</script>
